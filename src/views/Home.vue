@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <ProfessionalList></ProfessionalList>
+    <div class="container">
+      <ProfessionalList></ProfessionalList>
+    </div>
   </div>
 </template>
 
@@ -15,3 +17,6 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="less">
+</style>
