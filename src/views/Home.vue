@@ -1,8 +1,5 @@
 <template>
-	<div class="home">
-		<!-- <ProfessionalList></ProfessionalList> -->
-		<Search></Search>
-	</div>
+<div class="home"><Search></Search></div>
 </template>
 
 <script>
