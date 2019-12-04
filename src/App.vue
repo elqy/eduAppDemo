@@ -3,9 +3,12 @@
     <div id="header">
       头部
     </div>
+
     <div id="content">
-      <router-view></router-view>    
+      <!-- 路由匹配到的组件将显示在这里 -->
+      <router-view></router-view>
     </div>
+
     <div id="footer">
       底部.
     </div>
@@ -16,6 +19,14 @@
  -->
   </div>
 </template>
+<script>
+export default {
+  name: 'App',
+  data: function () {
+    return {}
+  }
+}
+</script>
 
 <style lang="less">
 #app {
