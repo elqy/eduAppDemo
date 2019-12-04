@@ -4,19 +4,14 @@
       头部
     </div>
     <div id="content">
-      <router-view></router-view>    
+      <router-view></router-view>
     </div>
-    <div id="footer">
-      底部.
-    </div>
-<!--    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
- -->
-  </div>
-</template>
 
+  </div>
+
+</template>
+<script>
+</script>
 <style lang="less">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
