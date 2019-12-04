@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div id="header">
-      头部
     </div>
 
     <div id="content">
@@ -10,7 +9,6 @@
     </div>
 
     <div id="footer">
-      底部.
     </div>
 <!--    <div id="nav">
       <router-link to="/">Home</router-link> |
@@ -29,9 +27,9 @@ export default {
 </script>
 
 <style lang="less">
-	body{
-		margin: 0;
-	}
+body{
+margin: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
