@@ -7,7 +7,7 @@
 				<span class="filter-label">筛选：</span>
 				<div class="filter-type">
 					<span class="filter-down">全部</span>
-					<i class="icon"></i>
+					<span class="fa fa-caret-down"></span>
 					<div class="dropdown-menu" style="display: none;">
 						<ul>
 							<li>全部</li>
@@ -20,7 +20,7 @@
 				<span class="pai">排序:</span>
 				<div class="filter-type">
 					<span class="filter-down">最热</span>
-					<i class="icon"></i>
+					<span class="fa fa-caret-down"></span>
 					<div class="dropdown-menu" style="display: none;">
 						<ul>
 							<li>全部</li>
@@ -33,16 +33,18 @@
 			</div>
 		</div>
 		<!--课程详情-->
-		<div id="CourseDetail">
-			<SearchItem v-for="item in items" :key="item.title" :src="item.src" >
-			<main>
-				{{item.title}}
-				<div>
-					<span slot="slotgrade"  class="course_mark-count">{{item.grade}}</span>
-					<span slot="slotnumber"  class="course_learn-count">{{item.number}}</span>
+		<div id="CourseDetail" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="6">
+			<SearchItem v-for="item in items" :key="item.title" :src="item.src">
+				<main>
+					{{ item.title }}
+					<div class="course_mark">
+						<span slot="slotgrade" class="course_mark-count">{{ item.grade }}</span>
+						<span slot="slotnumber" class="course_learn-count">{{ item.number }}</span>
 					</div>
-					<p class="course_price"><span slot="slotprice" class="course_price-discount">{{item.price}}</span></p>
-			</main>
+					<p>
+						<span slot="slotprice" class="course_price-discount">{{ item.price }}</span>
+					</p>
+				</main>
 			</SearchItem>
 		</div>
 	</div>
@@ -87,13 +89,224 @@ let items = [
 		price: '￥5'
 	},
 	{
+		src: require('../assets/images/dbaeda15b0394f95a2647852adc8876e.png'),
+		title: '一次搞定Java入门-高薪全栈+安卓',
+		grade: '4.8',
+		number: '6666人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/5e3104af1e814b4ba8f380581610f771.jpg'),
+		title: '免费Python全系列教程全栈工程师',
+		grade: '4.7',
+		number: '2222人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/6cbd1cd50e224cadb476293081563bf2.jpg'),
+		title: 'C语言零基础入门（详细讲解)',
+		grade: '4.8',
+		number: '3333人学过',
+		price: '￥5'
+	},
+	{
 		src: require('../assets/images/7bd23890-2a16-439f-bb94-bde8079e3bd6.jpg'),
+		title: 'Python开发21天入门必备',
+		grade: '4.8',
+		number: '4444人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/6631742865841211713.jpg'),
+		title: 'AI前奏必备-数据结构【C语言版】',
+		grade: '4.8',
+		number: '5555人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/d3d4e073db8744578ea3ff706d8cb0a0.jpg'),
+		title: 'Java快速入门与进阶',
+		grade: '4.8',
+		number: '6666人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/dbaeda15b0394f95a2647852adc8876e.png'),
+		title: '一次搞定Java入门-高薪全栈+安卓',
+		grade: '4.8',
+		number: '6666人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/5e3104af1e814b4ba8f380581610f771.jpg'),
+		title: '免费Python全系列教程全栈工程师',
+		grade: '4.7',
+		number: '2222人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/6cbd1cd50e224cadb476293081563bf2.jpg'),
+		title: 'C语言零基础入门（详细讲解)',
+		grade: '4.8',
+		number: '3333人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/7bd23890-2a16-439f-bb94-bde8079e3bd6.jpg'),
+		title: 'Python开发21天入门必备',
+		grade: '4.8',
+		number: '4444人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/6631742865841211713.jpg'),
+		title: 'AI前奏必备-数据结构【C语言版】',
+		grade: '4.8',
+		number: '5555人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/d3d4e073db8744578ea3ff706d8cb0a0.jpg'),
+		title: 'Java快速入门与进阶',
+		grade: '4.8',
+		number: '6666人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/dbaeda15b0394f95a2647852adc8876e.png'),
+		title: '一次搞定Java入门-高薪全栈+安卓',
+		grade: '4.8',
+		number: '6666人学过',
+		price: '￥5'
+	},
+	
+	{
+		src: require('../assets/images/5e3104af1e814b4ba8f380581610f771.jpg'),
+		title: '免费Python全系列教程全栈工程师',
+		grade: '4.7',
+		number: '2222人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/6cbd1cd50e224cadb476293081563bf2.jpg'),
+		title: 'C语言零基础入门（详细讲解)',
+		grade: '4.8',
+		number: '3333人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/7bd23890-2a16-439f-bb94-bde8079e3bd6.jpg'),
+		title: 'Python开发21天入门必备',
+		grade: '4.8',
+		number: '4444人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/6631742865841211713.jpg'),
+		title: 'AI前奏必备-数据结构【C语言版】',
+		grade: '4.8',
+		number: '5555人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/d3d4e073db8744578ea3ff706d8cb0a0.jpg'),
+		title: 'Java快速入门与进阶',
+		grade: '4.8',
+		number: '6666人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/dbaeda15b0394f95a2647852adc8876e.png'),
+		title: '一次搞定Java入门-高薪全栈+安卓',
+		grade: '4.8',
+		number: '6666人学过',
+		price: '￥5'
+	},
+	
+	{
+		src: require('../assets/images/5e3104af1e814b4ba8f380581610f771.jpg'),
+		title: '免费Python全系列教程全栈工程师',
+		grade: '4.7',
+		number: '2222人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/6cbd1cd50e224cadb476293081563bf2.jpg'),
+		title: 'C语言零基础入门（详细讲解)',
+		grade: '4.8',
+		number: '3333人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/7bd23890-2a16-439f-bb94-bde8079e3bd6.jpg'),
+		title: 'Python开发21天入门必备',
+		grade: '4.8',
+		number: '4444人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/6631742865841211713.jpg'),
+		title: 'AI前奏必备-数据结构【C语言版】',
+		grade: '4.8',
+		number: '5555人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/d3d4e073db8744578ea3ff706d8cb0a0.jpg'),
+		title: 'Java快速入门与进阶',
+		grade: '4.8',
+		number: '6666人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/dbaeda15b0394f95a2647852adc8876e.png'),
+		title: '一次搞定Java入门-高薪全栈+安卓',
+		grade: '4.8',
+		number: '6666人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/5e3104af1e814b4ba8f380581610f771.jpg'),
+		title: '免费Python全系列教程全栈工程师',
+		grade: '4.7',
+		number: '2222人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/6cbd1cd50e224cadb476293081563bf2.jpg'),
+		title: 'C语言零基础入门（详细讲解)',
+		grade: '4.8',
+		number: '3333人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/7bd23890-2a16-439f-bb94-bde8079e3bd6.jpg'),
+		title: 'Python开发21天入门必备',
+		grade: '4.8',
+		number: '4444人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/6631742865841211713.jpg'),
+		title: 'AI前奏必备-数据结构【C语言版】',
+		grade: '4.8',
+		number: '5555人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/d3d4e073db8744578ea3ff706d8cb0a0.jpg'),
+		title: 'Java快速入门与进阶',
+		grade: '4.8',
+		number: '6666人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/dbaeda15b0394f95a2647852adc8876e.png'),
 		title: '一次搞定Java入门-高薪全栈+安卓',
 		grade: '4.8',
 		number: '6666人学过',
 		price: '￥5'
 	}
-	
 ]
 export default {
 	name: 'Search',
@@ -104,6 +317,18 @@ export default {
 	},
 	components: {
 		SearchItem
+	},
+	methods: {
+	loadMore () {
+	  this.loading = true
+	  setTimeout(() => {
+	    let last = this.items[this.items.length - 1]
+	    for (let i = 1; i <= 6; i++) {
+				  this.items.push(last + i)
+	    }
+		this.loading = false
+	  }, 2500)
+	}
 	}
 }
 </script>
@@ -131,22 +356,23 @@ export default {
 				display: inline-block;
 				.filter-down {
 					color: #36b378;
-					border-right: 1px solid #c8c8cd;
 					padding: 0.2rem;
 				}
 			}
 		}
 	}
 	#CourseDetail {
+		.course_mark{
+			padding-top: 0.3rem;
+		}
+		.course_price-discount{
+			position: relative;
+			bottom: 1rem;
+		}
 		.course_mark {
 			font-size: 0.42667rem;
 			position: relative;
 			bottom: 0.3rem;
-			.course_price-discount {
-				color: #333;
-				font-size: 0.4rem;
-				padding: 2rem 0;
-			}
 		}
 		.course {
 			margin: -0.6rem 1rem;
@@ -187,11 +413,11 @@ export default {
 				padding-left: 0.42667rem;
 				top: 1rem;
 				.course_price {
-					.course_price-discount {
-						font-size: 0.9rem;
-						position: relative;
-						bottom: 1rem;
-					}
+					// .course_price-discount {
+					// 	font-size: 0.9rem;
+					// 	position: relative;
+					// 	bottom: 3rem;
+					// }
 				}
 				.course_learn-count {
 					padding-left: 0.3rem;
