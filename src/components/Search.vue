@@ -34,131 +34,78 @@
 		</div>
 		<!--课程详情-->
 		<div id="CourseDetail">
-			<SearchItem></SearchItem>
-			<section class="course">
-				<aside>
-					<img
-						class="course_img"
-						src="../assets/images/5e3104af1e814b4ba8f380581610f771.jpg"
-						alt=""
-					/>
-				</aside>
-				<main>
-					<h5>C语言零基础入门（详细讲解）</h5>
-					<div class="course_mark">
-						<span class="course_mark-count">4.8</span>
-						<span class="course_learn-count">14192人学过</span>
+			<SearchItem v-for="item in items" :key="item.title" :src="item.src" >
+			<main>
+				{{item.title}}
+				<div>
+					<span slot="slotgrade"  class="course_mark-count">{{item.grade}}</span>
+					<span slot="slotnumber"  class="course_learn-count">{{item.number}}</span>
 					</div>
-					<p class="course_price"><span class="course_price-discount">￥5</span></p>
-				</main>
-			</section>
-			<section class="course">
-				<aside>
-					<img
-						class="course_img"
-						src="../assets/images/6cbd1cd50e224cadb476293081563bf2.jpg"
-						alt=""
-					/>
-				</aside>
-				<main>
-					<h5>Python开发21天入门必备</h5>
-					<div class="course_mark">
-						<span class="course_mark-count">4.8</span>
-						<span class="course_learn-count">22080人学过</span>
-					</div>
-					<p class="course_price"><span class="course_price-discount">￥9.9</span></p>
-				</main>
-			</section>
-			<section class="course">
-				<aside>
-					<img
-						class="course_img"
-						src="../assets/images/7bd23890-2a16-439f-bb94-bde8079e3bd6.jpg"
-						alt=""
-					/>
-				</aside>
-				<main>
-					<h5>AI前奏必备-数据结构【C语言版】</h5>
-					<div class="course_mark">
-						<span class="course_mark-count">4.9</span>
-						<span class="course_learn-count">4655人学过</span>
-					</div>
-					<p class="course_price"><span class="course_price-discount">￥199</span></p>
-				</main>
-			</section>
-			<section class="course">
-				<aside>
-					<img
-						class="course_img"
-						src="../assets/images/d3d4e073db8744578ea3ff706d8cb0a0.jpg"
-						alt=""
-					/>
-				</aside>
-				<main>
-					<h5>老九零基础学编程系列之C语言</h5>
-					<div class="course_mark">
-						<span class="course_mark-count">5</span>
-						<span class="course_learn-count">338670人学过</span>
-					</div>
-					<p class="course_price"><span class="course_price-free">免费</span></p>
-				</main>
-			</section>
-			<section class="course">
-				<aside>
-					<img
-						class="course_img"
-						src="../assets/images/dbaeda15b0394f95a2647852adc8876e.png"
-						alt=""
-					/>
-				</aside>
-				<main>
-					<h5>Java快速入门与进阶</h5>
-					<div class="course_mark">
-						<span class="course_mark-count">4.9</span>
-						<span class="course_learn-count">5034人学过</span>
-					</div>
-					<p class="course_price"><span class="course_price-discount">￥10</span></p>
-				</main>
-			</section>
-			<section class="course">
-				<aside>
-					<img
-						class="course_img"
-						src="../assets/images/6631742865841211713.jpg"
-						alt=""
-					/>
-				</aside>
-				<main>
-					<h5>免费Python全系列教程全栈工程师</h5>
-					<div class="course_mark">
-						<span class="course_mark-count">5</span>
-						<span class="course_learn-count">163014人学过</span>
-					</div>
-					<p class="course_price"><span class="course_price-free">免费</span></p>
-				</main>
-			</section>
-			<section class="course">
-				<aside>
-					<img
-						class="course_img"
-						src="//edu-image.nosdn.127.net/55f5ce0e935143c7a009c04673dd7adb.png?imageView&amp;quality=100&amp;crop=0_0_748_390&amp;thumbnail=448y248"
-						alt=""
-					/>
-				</aside>
-				<main>
-					<h5>一次搞定Java入门-高薪全栈+安卓</h5>
-					<div class="course_mark">
-						<span class="course_mark-count">5</span>
-						<span class="course_learn-count">907人学过</span>
-					</div>
-					<p class="course_price"><span class="course_price-discount">￥299</span></p>
-				</main>
-			</section>
+					<p class="course_price"><span slot="slotprice" class="course_price-discount">{{item.price}}</span></p>
+			</main>
+			</SearchItem>
 		</div>
 	</div>
 </template>
 
 <script>
+import SearchItem from './SearchItem.vue'
+let items = [
+	{
+		src: require('../assets/images/5e3104af1e814b4ba8f380581610f771.jpg'),
+		title: '免费Python全系列教程全栈工程师',
+		grade: '4.7',
+		number: '2222人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/6cbd1cd50e224cadb476293081563bf2.jpg'),
+		title: 'C语言零基础入门（详细讲解)',
+		grade: '4.8',
+		number: '3333人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/7bd23890-2a16-439f-bb94-bde8079e3bd6.jpg'),
+		title: 'Python开发21天入门必备',
+		grade: '4.8',
+		number: '4444人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/6631742865841211713.jpg'),
+		title: 'AI前奏必备-数据结构【C语言版】',
+		grade: '4.8',
+		number: '5555人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/d3d4e073db8744578ea3ff706d8cb0a0.jpg'),
+		title: 'Java快速入门与进阶',
+		grade: '4.8',
+		number: '6666人学过',
+		price: '￥5'
+	},
+	{
+		src: require('../assets/images/7bd23890-2a16-439f-bb94-bde8079e3bd6.jpg'),
+		title: '一次搞定Java入门-高薪全栈+安卓',
+		grade: '4.8',
+		number: '6666人学过',
+		price: '￥5'
+	}
+	
+]
+export default {
+	name: 'Search',
+	data () {
+		return {
+			items: items
+		}
+	},
+	components: {
+		SearchItem
+	}
+}
 </script>
 
 <style scoped lang="less">
@@ -205,7 +152,7 @@
 			margin: -0.6rem 1rem;
 			width: 20.583333333333332rem;
 			height: 6.5rem;
-			border-bottom: 1px solid #CCCCCC;
+			border-bottom: 1px solid #cccccc;
 			.course_mark-count {
 				padding: 0 0.21333rem 0 0.10667rem;
 				line-height: 0.34667rem;
