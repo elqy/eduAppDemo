@@ -2,7 +2,7 @@
 	<section class="course">
 		<aside><img class="course_img" :src="src" alt="" /></aside>
 		<main>
-			<slot></slot>
+		<slot></slot>
 			<div class="course_mark">
 				<slot name="slotgrade"></slot>
 				<slot name="slotnumber"></slot>
@@ -41,7 +41,7 @@ export default {
 				display: inline-block;
 				.filter-down {
 					color: #36b378;
-					border-right: 1px solid #c8c8cd;
+					
 					padding: 0.2rem;
 				}
 			}
@@ -52,11 +52,11 @@ export default {
 			font-size: 0.42667rem;
 			position: relative;
 			bottom: 0.3rem;
-			.course_price-discount {
-				color: #333;
-				font-size: 0.4rem;
-				padding: 2rem 0;
-			}
+			// .course_price-discount {
+			// 	color: #333;
+			// 	font-size: 0.4rem;
+			// 	padding: 2rem 0;
+			// }
 		}
 		.course {
 			margin: -0.6rem 1rem;
