@@ -7,7 +7,7 @@
 				<span class="filter-label">筛选：</span>
 				<div class="filter-type">
 					<span class="filter-down">全部</span>
-					<span class="fa fa-caret-down"></span>
+					<span  id="aa" class="fa fa-caret-down"></span>
 					<div class="dropdown-menu" style="display: none;">
 						<ul>
 							<li>全部</li>
@@ -324,10 +324,10 @@ export default {
 	  setTimeout(() => {
 	    let last = this.items[this.items.length - 1]
 	    for (let i = 1; i <= 6; i++) {
-				  this.items.push(last + i)
+			this.items.push(last + i)
 	    }
 		this.loading = false
-	  }, 2500)
+	  }, 1)
 	}
 	}
 }
