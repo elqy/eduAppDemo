@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div id="header">
-      头部
     </div>
 
     <div id="content">
@@ -10,9 +9,9 @@
     </div>
 
     <div id="footer">
-      底部.
+			<tarbar></tarbar>
     </div>
-<!--    <div id="nav">
+    <!--    <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
@@ -20,33 +19,26 @@
   </div>
 </template>
 <script>
-export default {
-  name: 'App',
-  data: function () {
-    return {}
+	import tarbar from './components/Tabbar.vue'
+  export default {
+    name: 'App',
+	components: {
+		tarbar
+		
+	}
   }
-}
 </script>
 
 <style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-// #nav {
-//   padding: 30px;
-
-//   a {
-//     font-weight: bold;
-//     color: #2c3e50;
-
-//     &.router-link-exact-active {
-//       color: #42b983;
-//     }
-//   }
-// }
+  *{
+    list-style: none;
+    text-decoration: none
+  }
+  body{
+    margin: 0;
+    background-color:#EBEBEB;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+  }
 </style>

@@ -1,31 +1,30 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-
-// 注册vue路由
+import MyStudy from '../views/MyStudy.vue'
+import ZhangHao from '../views/ZhangHao.vue'
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+const routes = [{
+		path: '/',
+		name: 'home',
+		component: Home
+	},
+	{
+		path: '/MyStudy',
+		name: 'MyStudy',
+		component: MyStudy
+	},
+	{
+		path: '/ZhangHao',
+		name: 'ZhangHao',
+		component: ZhangHao
+	}
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+	mode: 'history',
+	base: process.env.BASE_URL,
+	routes
 })
-
-// 向外暴露路由器对象
 export default router
