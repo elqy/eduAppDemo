@@ -8,17 +8,17 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',//首页
+    name: 'home',
     component: Home
   },
   {
     path: '/mystudy',
-    name: 'mystudy',//我的学习
+    name: 'mystudy',
     component: () => import('../views/MyStudy.vue')
   },
   {
     path: '/zhanghao',
-    name: 'zhanghao',//帐号
+    name: 'zhanghao',
     component: () => import('../views/ZhangHao.vue')
   }
 ]
