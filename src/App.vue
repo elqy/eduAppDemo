@@ -39,16 +39,20 @@ export default {
 </script>
 
 <style lang="less">
-  #app {
-    overflow: hidden;
-    height: 100vh;
-    .page-wrap {
-      overflow: auto;
-      height: 100%;
-      padding-bottom: 10rem;
-      .page-title{
-        line-height: 1.5rem;
-        font-size: 1.5rem;
+  body {
+    margin: 0rem;
+    padding: 0rem;
+    #app {
+      overflow: hidden;
+      height: 100vh;
+      .page-wrap {
+        overflow: auto;
+        height: 100%;
+        padding-bottom: 10rem;
+        .page-title {
+          line-height: 1.5rem;
+          font-size: 1.5rem;
+        }
       }
     }
   }
