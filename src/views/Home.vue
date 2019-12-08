@@ -49,12 +49,19 @@
       </div>
     </div>
     <div class="clearfix"></div>
+    <div>
+      <CourseModule></CourseModule>
+    </div>
   </div>
 </template>
 
 <script>
+import CourseModule from '../components/CourseModule.vue'
 export default {
-  name: 'home'
+  name: 'home',
+  components: {
+    CourseModule
+  }
 }
 </script>
 
