@@ -2,6 +2,8 @@
   <div id="module">
     <ul>
       <CourseIndex imgsrc="assets/course/1.png">课程1</CourseIndex>
+      <CourseIndex imgsrc="assets/course/2.jpg">课程2</CourseIndex>
+      <CourseIndex imgsrc="assets/course/3.png">课程3</CourseIndex>
     </ul>
   </div>
 </template>
