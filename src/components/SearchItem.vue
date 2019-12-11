@@ -1,6 +1,6 @@
 <template>
 	<section class="course">
-		<aside><img class="course_img" :src="src" alt="" /></aside>
+		<aside><img class="course_img"  alt="" :src='src' /></aside>
 		<main>
 		<slot></slot>
 			<div class="course_mark">
@@ -9,6 +9,7 @@
 			</div>
 			<p class="course_price"><slot name="slotprice"></slot></p>
 		</main>
+	
 	</section>
 </template>
 
@@ -20,6 +21,7 @@ export default {
 
 <style scoped lang="less">
 #Search {
+
 	.TopSearch {
 		width: 100%;
 		height: 0.37333rem;
