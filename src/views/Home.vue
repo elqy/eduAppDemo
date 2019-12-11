@@ -13,3 +13,8 @@ export default {
   }
 }
 </script>
+<style>
+	.van-ellipsis{
+		margin-left: 5rem;
+	}
+</style>
